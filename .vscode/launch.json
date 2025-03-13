@@ -1,0 +1,158 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Análise Completa",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "CONDA_DEFAULT_ENV": "churn-analysis"
+            },
+            "python": "${command:python.interpreterPath}",
+            "stopOnEntry": true,
+            "showReturnValue": true,
+            "redirectOutput": true,
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Dashboard - Processamento Completo",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "CONDA_DEFAULT_ENV": "churn-analysis",
+                "MPLBACKEND": "Agg"
+            },
+            "python": "${command:python.interpreterPath}",
+            "stopOnEntry": false,
+            "showReturnValue": true,
+            "redirectOutput": true,
+            "cwd": "${workspaceFolder}",
+            "presentation": {
+                "hidden": false,
+                "group": "dashboard",
+                "order": 1
+            }
+        },
+        {
+            "name": "Dashboard - Apenas Visualização",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/run_dashboard.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "CONDA_DEFAULT_ENV": "churn-analysis",
+                "MPLBACKEND": "Agg"
+            },
+            "python": "${command:python.interpreterPath}",
+            "stopOnEntry": false,
+            "showReturnValue": true,
+            "redirectOutput": true,
+            "cwd": "${workspaceFolder}",
+            "presentation": {
+                "hidden": false,
+                "group": "dashboard",
+                "order": 2
+            }
+        },
+        {
+            "name": "API",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/api/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "CONDA_DEFAULT_ENV": "churn-analysis"
+            },
+            "python": "${command:python.interpreterPath}",
+            "stopOnEntry": true,
+            "showReturnValue": true,
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Análise de Cohort",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/analysis/cohort_analysis.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "CONDA_DEFAULT_ENV": "churn-analysis"
+            },
+            "python": "${command:python.interpreterPath}",
+            "stopOnEntry": false,
+            "showReturnValue": true,
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Análise Causal",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/analysis/causal_analysis.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "CONDA_DEFAULT_ENV": "churn-analysis"
+            },
+            "python": "${command:python.interpreterPath}",
+            "stopOnEntry": false,
+            "showReturnValue": true,
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Análise de Preços",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/analysis/price_sensitivity.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "CONDA_DEFAULT_ENV": "churn-analysis"
+            },
+            "python": "${command:python.interpreterPath}",
+            "stopOnEntry": false,
+            "showReturnValue": true,
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Treinar Modelo",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/models/modeling.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "CONDA_DEFAULT_ENV": "churn-analysis"
+            },
+            "python": "${command:python.interpreterPath}",
+            "stopOnEntry": false,
+            "showReturnValue": true,
+            "cwd": "${workspaceFolder}"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Análise + API",
+            "configurations": ["Análise Completa", "API"]
+        },
+        {
+            "name": "Dashboard Completo",
+            "configurations": ["Dashboard - Processamento Completo", "Dashboard - Apenas Visualização"]
+        }
+    ]
+}
